@@ -1,0 +1,69 @@
+main{
+    padding-inline: 20vw;
+    padding-block: 20px;
+}
+main > p.datetime{
+    width: fit-content;
+    margin: 0px;
+    font-size: small;
+}
+main > h1{
+    font-size: 3.5rem;
+}
+main > .links .btn{
+    border: 2px solid #bdbdbd38!important;
+    border-radius: 0.5rem!important;
+    margin-inline: 5px;
+}
+main .profile img{
+    margin-right: 20px!important;
+}
+main .p-info > span{
+    width: 50%;
+    padding: 10px;
+}
+main .p-info span.text-muted{
+    font-size: small;
+}
+nav.profile-nav{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    margin: 20px;
+    margin-block: auto;
+    border-radius: 30px;
+    padding: 10px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    top: 50%;
+    transform: translateY(-50%);
+}
+nav.profile-nav > a{
+    padding: 15px;
+    padding-inline: 10px;
+    font-weight: bold;
+}
+nav.profile-nav > a:hover{
+    color: var(--highlight);
+}
+
+@media (max-width:800px) {
+    main{
+        padding-inline:1vw ;
+    }
+    nav.profile-nav{
+        top: unset;
+        bottom:-10px;
+        transform: unset;
+        width: 100%;
+        flex-direction: row;
+        margin: 0px;
+        padding-bottom: 20px;
+        padding-inline: 30px;
+    }
+    nav.profile-nav > a > i{
+        font-size: larger;
+    }
+}

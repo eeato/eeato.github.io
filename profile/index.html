@@ -1,0 +1,95 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/map.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Profile</title>
+</head>
+<body class="p-3 px-4 bg-light">
+    <nav class="profile-nav shadow-sm">
+        <a href="/profile/" class="active border-0"><i class="bi bi-person"></i></a>
+        <a href="/program/search/"><i class="bi bi-search"></i></a>
+        <a href="/notifications/"><i class="bi bi-bell"></i></a>
+        <a href="/settings/"><i class="bi bi-gear"></i></a>
+    </nav>
+    <main>
+        <p class="datetime bg-primary text-white px-3 py-1 rounded-pill"><i class="bi bi-clock text-white"></i> Wed 23 June | 12:30 am</p>
+        <p class="datetime bg-primary text-white px-3 py-1 rounded-pill my-1 cursor-pointer" onclick="window.location.href = 'edit/'"><i class="bi bi-pencil text-white"></i> Edit Profile</p>
+        <h1 class="mb-2">Hie there, I'm <span class="text-muted user_displayname">Johnny</span> </h1>
+        <div class="links d-flex flex-row">
+            <button class="btn btn-white bg-white">Civil Engi.</button>
+            <button class="btn btn-white bg-white">Software Engi.</button>
+        </div>
+        <p class="body p-2 mt-3 px-2 mb-4 text-muted text-justify">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit minima fugiat similique voluptas at maxime ex, dignissimos illo laborum corrupti sint. Laudantium obcaecati quibusdam et rerum nobis sapiente voluptatum? Repudiandae? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis quae omnis adipisci suscipit quaerat, ipsum excepturi quam reprehenderit nam unde velit quasi deleniti maiores sint quidem possimus obcaecati assumenda quas.
+        </p>
+        <p class="text-center px-2">
+            <hr class="mx-5 text-center">
+        </p>
+        <div class="p-2 profile">
+            <span class="h3 my-3">My Profile</span><br>
+            <div class="d-flex flex-row p-3 border-1 border rounded-3">
+                <img src="../assets/img/avatars/avatar3.jpeg" class="rounded-circle w-auto mx-2" alt="">
+                <span class="d-flex flex-column">
+                    <span class="h5 m-0">John Doe</span>
+                    <span class="text-muted text-sm">Student</span>
+                    <span class="text-muted text-smr">Hre, Zimbabwe</span>
+                </span>
+            </div>
+            <div class="p-3 mt-2 border-1 border rounded-3">
+                <span class="h5">Personal Information</span><br>
+                <div class="d-flex flex-row flex-wrap p-info">
+                    <span>
+                        <span class="text-muted">First Name</span><br>
+                        <span>John</span>
+                    </span>
+                    <span>
+                        <span class="text-muted">Last Name</span><br>
+                        <span>Doe</span>
+                    </span>
+                    <span>
+                        <span class="text-muted">Email Address</span><br>
+                        <span>johndoe@gmail.com</span>
+                    </span>
+                    <span>
+                        <span class="text-muted">Phone</span><br>
+                        <span>+09 365 346 888</span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="p-3 mt-2 border-1 border rounded-3">
+                <span class="h5">Address</span><br>
+                <div class="d-flex flex-row flex-wrap p-info">
+                    <span>
+                        <span class="text-muted">Country</span><br>
+                        <span>United Kingdom</span>
+                    </span>
+                    <span>
+                        <span class="text-muted">City/State</span><br>
+                        <span>Leeds, East London</span>
+                    </span>
+                    <span>
+                        <span class="text-muted">House</span><br>
+                        <span>ERT2984 Jabavu Dr</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        
+        
+    </main>
+</body>
+<script src="/assets/js/main.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+<script src="/assets/js/db.js"></script>
+<script>
+
+</script>
+</html>

@@ -1,0 +1,102 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/map.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Edit Profile</title>
+</head>
+<body class="bg-light">
+    <nav class="profile-nav shadow-sm">
+        <a href="/profile/"><i class="bi bi-person"></i></a>
+        <a href="/program/search/"><i class="bi bi-search"></i></a>
+        <a href="/notifications/"><i class="bi bi-bell"></i></a>
+        <a href="/settings/"><i class="bi bi-gear"></i></a>
+    </nav>
+    <main class="py-4 mb-5">
+        
+        <form action="" class="">
+            <h3 class="my-3">Create Profile</h3>
+            <p>
+                <span class="text-muted text-sm">Personal Details</span>
+                <input class="form-control" type="text" name="FullName" required="true" id="fullname" placeholder="FullName">
+                <input class="form-control" type="text" name="pin" required="true" id="pin" placeholder="PIN">
+                <input class="form-control" type="text" name="id Number" required="true" id="idnumber" placeholder="ID Number">
+                <input class="form-control" type="text" name="Address" required="true" id="address" placeholder="Address eg. HouseNumber, Street">
+                <input class="form-control" type="text" name="City" required="true" id="city" placeholder="City/State">
+                <input class="form-control" type="text" name="Country" required="true" id="country" placeholder="Country">
+                <input class="form-control" type="text" name="PhoneNumber" required="true" id="phonenumber" placeholder="PhoneNumber">
+                    <span class="text-muted text-sm">DOB</span>
+                    <input class="form-control" required="true" type="date" name="Date Of Birth" id="dob" placeholder="DOB">
+            </p>
+            <p>
+                <span class="text-muted text-sm">Other Details</span>
+                <input class="form-control" type="url" name="" id="website" placeholder="Website">
+                <input class="form-control" type="url" name="" id="cv" placeholder="CV url">
+                <textarea name="" required="true" id="intro" class="form-control" cols="20" rows="10" maxlength="1000" placeholder="Introduction"></textarea>
+                <input class="form-control" type="text" required="true" name="" id="languages" placeholder="Languages (comma separated list)">
+                <input class="form-control" type="text" name="" id="skills" placeholder="Skills (comma separated list)">
+                <input class="form-control" type="text" required="true" name="" id="hobbies" placeholder="Hobbies (comma separated list)">
+            </p>
+            
+            
+            
+            <p>
+                <span class="text-muted text-sm">Grade 7 Qualifications</span>
+                <input class="form-control" type="text" name="" id="g7_exam_board" placeholder="Exam Board (ZIMSEC, Cambridge, etc.)">
+                <input class="form-control" type="text" name="" id="g7_school" placeholder="School Name">
+                <input class="form-control" type="number" name="" id="g7_year" placeholder="Year">
+                <input class="form-control" type="number" name="" id="g7_results" placeholder="Resulting Units">
+                <input class="form-control" type="text" name="" id="g7_subjects" placeholder="List of Subjects (comma separated)">
+                <span class="text-muted text-sm">Grade 7 Certificate / Result Slip : </span>
+                <input type="file" name="Grade7 Certificate" id="g7_image">
+            </p>
+
+            <p>
+                <span class="text-muted text-sm">O Level Qualifications</span>
+                <input class="form-control" type="text" name="" id="ol_exam_board" placeholder="Exam Board (ZIMSEC, Cambridge, etc.)">
+                <input class="form-control" type="text" name="" id="ol_school" placeholder="School Name">
+                <input class="form-control" type="number" name="" id="ol_year" placeholder="Year">
+                <textarea name="" id="ol_results" class="form-control" cols="20" rows="10" maxlength="1000" placeholder="My Results in the format -
+                Maths : A,
+                English : B,
+                Combined Science : C, ..."></textarea>
+                <span class="text-muted text-sm">O level Certificate / Result Slip : </span>
+                <input type="file" name="O Level Certificate" id="ol_image">
+            </p>
+
+            <p>
+                <span class="text-muted text-sm">A Level Qualifications</span>
+                <input class="form-control" type="text" name="" id="al_exam_board" placeholder="Exam Board (ZIMSEC, Cambridge, etc.)">
+                <input class="form-control" type="text" name="" id="al_school" placeholder="School Name">
+                <input class="form-control" type="number" name="" id="al_year" placeholder="Year">
+                <textarea name="" id="al_results" class="form-control" cols="10" rows="10" maxlength="1000" placeholder="My Results in the format -
+                Maths : A,
+                English : B,
+                Combined Science : C, ..."></textarea>
+                <span class="text-muted text-sm">A level Certificate / Result Slip : </span>
+                <input type="file" class="upload_images" name="A level Certificate" id="al_image">
+            </p>
+
+            <p>
+                <span class="text-muted text-sm">Career Qualifications</span>
+                <input class="form-control" type="text" name="" id="university" placeholder="University name">
+                <textarea name="" id="university_description" class="form-control" cols="10" rows="10" maxlength="1000" placeholder="Describe your whole textiary education"></textarea>
+            </p>
+            <button class="btn btn-primary px-3" type="submit">Save</button>
+            <button class="btn btn-secondary px-3" type="button">Cancel</button>
+        </form>
+    </main>
+</body>
+    <script src="/assets/js/main.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="/assets/js/db.js"></script>
+    <script>
+        
+    </script>
+</html>

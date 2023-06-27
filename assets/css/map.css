@@ -1,0 +1,219 @@
+@import url(../vendor/bootstrap/css/bootstrap.min.css);
+@import url(../vendor/bootstrap-icons/bootstrap-icons.css);
+:root{
+    --bg-color : white;
+    --primary : #72e7dc;
+    --primary-dark:#17d3c0;
+    --secondary : #69bcf3;
+    --highlight: rgb(255, 166, 0);
+    --highlight-light :rgba(255, 166, 0, 0.507); 
+    --text-color : black;
+}
+body{
+    background-color: var(--bg-color);
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden auto;
+}
+.text-center{
+    text-align: center;
+}
+.text-justify{
+    text-align: justify;
+}
+.text-highlight{
+    color: var(--highlight);
+}
+.text-sm{
+    font-size: small;
+}
+.text-smr{
+    font-size: smaller;
+}
+.bg-highlight{
+    background-color: var(--highlight)!important;
+}
+.bg-header{
+    background-color:#fafff9;
+}
+.bg-highlight-light{
+    background-color: var(--highlight-light)!important;
+}
+.bg-primary{
+    background-color: var(--primary)!important;
+}
+.font-cursive{
+    font-family: Rage;
+}
+a{
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+}
+a.active{
+    color: var(--highlight);
+    padding: 2px 0px;
+    border-bottom: 1px solid var(--highlight);
+}
+.program:hover{
+    background-color: #2f353a;
+}
+.program{
+    flex: 1;
+    padding: 10px;
+    margin: 10px;
+    width: auto;
+    min-width: 25%;
+    transition: all;
+    transition-delay: 0ms;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+    cursor: pointer;
+}
+.program *{
+    margin: 0px;
+}
+.program img{
+    max-height: 40px;
+    margin-right: 10px;
+}
+.program span{
+    font-size: 0.9rem;
+}
+.program .SubHeading{
+    max-width: 95%;
+    margin-bottom: 35px;
+    color: rgba(128, 128, 128, 0.773);
+    font-size:0.9rem;
+}
+.program:hover .SubHeading{
+    color: rgb(163, 163, 163);
+}
+.program:hover span{
+    color: rgb(219, 219, 219);
+}
+.program i{
+    color: var(--highlight-light)!important;
+}
+span.h{
+    color: var(--primary-dark);
+}
+a.apply{
+    color: var(--primary-dark);
+    font-weight: normal;
+    font-size: small;
+    width: fit-content;
+    border-bottom: 1px solid var(--primary-dark);
+    transition: all;
+    transition-delay: 0ms;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+    padding: 5px 0px;
+}
+a.apply:hover{
+    padding: 5px 15px;
+    color: white;
+    background-color: var(--primary-dark);
+    border-radius: 7px;
+}
+ul.tags{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0px;
+
+}
+ul.tags > li{
+    padding: 5px 10px!important;
+    background-color: rgb(214, 214, 214);
+    border-radius: 4px;
+    margin: 2px 2px;
+    font-size: small;
+    cursor: pointer;
+}
+ul.tags > li:hover{
+    background-color: rgb(175, 175, 175);
+}
+.transit{
+    transition-property: all;
+    transition-delay: 0ms;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+}
+.cursor-pointer{
+    cursor: pointer;
+}
+
+@media (min-width:800px) {
+    .mobile{
+        display: none;
+    }
+    .toast{
+        width: calc(60% - 80px);
+        margin: 40px;
+    }
+
+}
+@media (max-width:900px) {
+    .desktop{
+        display: none;
+    }
+}
+.toast{
+    display: block!important;
+    width: calc(100% - 40px);
+    margin: 20px;
+    background-color: #2f353ad2;
+    transition-property: position, width, height, opacity, bottom;
+    transition-delay: 100ms;
+    transition-duration: 2s;
+    transition-timing-function: ease-in-out;
+    position: fixed;
+    z-index: 100;
+    bottom: 0px;
+    opacity: 1;
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px 5px;
+}
+
+nav.profile-nav{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    margin: 20px;
+    margin-block: auto;
+    border-radius: 30px;
+    padding: 10px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    top: 50%;
+    transform: translateY(-50%);
+}
+nav.profile-nav > a{
+    padding: 15px;
+    padding-inline: 10px;
+    font-weight: bold;
+}
+nav.profile-nav > a:hover{
+    color: var(--highlight);
+}
+
+@media (max-width:800px) {
+    nav.profile-nav{
+        top: unset;
+        bottom:-10px;
+        transform: unset;
+        width: 100%;
+        flex-direction: row;
+        margin: 0px;
+        padding-bottom: 20px;
+        padding-inline: 30px;
+    }
+    nav.profile-nav > a > i{
+        font-size: larger;
+    }
+}

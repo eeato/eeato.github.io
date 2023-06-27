@@ -1,0 +1,18 @@
+h1{
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-block: 3rem;
+}
+body > main{
+    margin-inline: 6rem;
+}
+body > main form{
+    margin-block: 3rem;
+    margin-inline: 6rem;
+}
+main button{
+    width: calc(100% - 6rem);
+}
+form > input{
+    margin-block: 10px;
+}
