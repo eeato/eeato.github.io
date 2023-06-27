@@ -258,7 +258,7 @@ function addApplicant(frm = document.body.querySelector('form')) {
     event.preventDefault();
     
     let ap = {
-        userid : firebase.auth().currentUser.uid,
+        userid : user.uid,
         pin : elval('#pin'),
         fullName : elval('#fullname'),
         dob : elval('#dob'),
