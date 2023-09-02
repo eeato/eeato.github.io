@@ -1,0 +1,92 @@
+header{
+    text-align: center;
+    padding: 7vh 20px;
+    background-color: aliceblue;
+}
+header > form{
+    width: 40vw;
+}
+header > form{
+    border-radius: 10px;
+}
+header > form > *{
+    margin-inline: 2px;
+    border: none!important;
+    padding: 10px 20px!important;
+    border-radius: 10px!important;
+}
+header > form > input[type=search]{
+    flex: 6;
+    border-right: 2px solid rgba(128, 128, 128, 0.13)!important;
+    border-top-right-radius: 0px!important;
+    border-bottom-right-radius: 0px!important;
+}
+.btn-filter{
+    border-right: 2px solid rgba(128, 128, 128, 0.13)!important;
+    border-radius: 0px!important;
+    padding-left: 15px!important;
+    display: none;
+}
+main{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+main > .filter{
+    width: fit-content;
+    flex: 2;
+}
+main > .programs{
+    flex: 6;
+    margin-right: 3rem!important;
+    padding: 7rem;
+}
+.filter p{
+    margin: 0px;
+    margin-bottom: 5px;
+    color: gray;
+}
+.filter > button{
+    display: none;
+}
+@media (max-width:1000px) {
+    body:has( .filter.active) .programs, body:has( .filter.active) header{
+        filter: blur(10px);
+    }
+    header > form{
+        width: 85vw;
+    }
+    .filter{
+        display: none;
+        margin: 0px!important;
+        margin-inline: 10vw!important;
+        margin-block: auto!important;
+        position: fixed;
+        background-color: rgb(66, 66, 66);
+        border-radius: 10px;
+        z-index: 2;
+        margin-top: -10vh!important;
+    }
+    .filter.active{
+        display: block;
+    }
+    .filter > h4, .filter > h6{
+        color: whitesmoke!important;
+    }
+    .filter > button{
+        display: block;
+    }
+    .btn-filter{
+        display: block;
+    }
+    main > .programs{
+        padding:0px!important;
+        margin: 0px!important;
+        margin-right: 1.5rem!important;
+        margin-left: 1.5rem!important;
+        max-width: fit-content;
+    }
+    .program{
+        min-width: 70vw;
+    }
+}

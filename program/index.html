@@ -1,0 +1,81 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Program</title>
+</head>
+<body class="bg-light">
+
+    <header class="p-2 px-5">
+        <a href="/">
+        <h2 class="font-cursive text-highlight fw-bold my-3">EEATO</h2>
+        </a>
+    </header>
+
+    <main class="bg-white m-2 rounded-2 p-5 mt-4">
+        <h1 class="title">...</h1>
+        <h2 class="text-muted subtitle" >...</h2>
+        <h4 class="text-muted text-sm info">...</h4>
+        <p class="content">
+            ...
+        </p>
+
+        <button id="btn_pply" class="btn apply rounded-pill px-4 py-2 mx-2">Apply Now!</button>
+
+
+    </main>
+    
+
+
+</body>
+
+<script src="/assets/js/main.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="/assets/js/db.js"></script>
+
+    <script>
+      let prog = [];
+        programs.child(window.location.hash.slice(1)).get().then((snapshot) => {
+            if (snapshot.exists()) {
+                let vall = snapshot.val()
+              console.log(vall);
+              prog = vall;
+
+              document.querySelector('.title').innerText = vall.title;
+              document.querySelector('.subtitle').innerText = vall.subtitle;
+
+            organisations.child(vall.organisationID).get().then((snapsh) => {
+                if (snapsh.exists()) {
+                  let ppa = snapsh.val();
+                  document.querySelector('.info').innerText = 'by ' + ppp.title + ', at ' + vall.dateTimeOfPost;
+                }
+            });
+            document.querySelector('.content').innerHTML = vall.message;
+            } else {
+              console.log("No data available");
+              document.querySelector('.title').innerText = 'Sorry, Program does not exist :(';
+            }
+          }).catch((error) => {
+            console.error(error);
+            document.querySelector('.title').innerText = 'Sorry, error occured in fetching the program :(';
+          });
+
+        
+          document.querySelector('#btn_apply').addEventListener('click', event => {
+            prog.applicants.push({
+              user : user.uid,
+              options : '',
+              applicationDate : (new Date).getTime()
+            });
+            programs.child(window.location.hash.slice(1)).update(prog);
+
+          });
+    </script>
+</html>

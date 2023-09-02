@@ -77,7 +77,7 @@ div.right{
     background-repeat: no-repeat;
     background-size: cover;
 }
-.btn{
+.btn:not(.btn-primary){
     background-color: var(--primary);
 }
 .tasks{

@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Organisation</title>
+</head>
+<body>
+    
+
+    <nav class="bg-white p-4">
+        <h2 class="font-cursive text-highlight fw-bold my-4">EEATO</h2>
+        <a class="active" href="/organisation/"> <i class="bi bi-house"></i> Home</a>
+        <a  href="/organisation/applicants/"> <i class="bi bi-person-badge"></i> Applicants</a>
+        <a  href="/organisation/edit/"> <i class="bi bi-gear"></i> Settings</a>
+        <a  href="/organisation/" type="logout"> <i class="bi bi-arrow-left-circle"></i> Logout</a>
+
+    </nav>
+    <main class="bg-light p-5 pt-1">
+
+        <h3 class="fullname text-muted text-sm fw-light mt-2 mb-0">...</h3>
+        <h1 class="title my-2 mb-4">...</h1>
+        <h4>Programs</h4>
+        <table class="table-bordered w-100" cellpadding="4">
+            <tr class="font text-sm fw-light">
+                <th>#</th>
+                <th>TITLE</th>
+                <th>DATE OF POST</th>
+                <th>DEADLINE</th>
+            </tr>
+        </table>
+
+    </main>
+
+
+</body>
+
+<script src="/assets/js/main.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="/assets/js/db.js"></script>
+
+    <script>
+        currentOrganisation();
+    </script>
+
+
+</html>

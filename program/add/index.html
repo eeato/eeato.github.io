@@ -1,0 +1,63 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Home</title>
+</head>
+<body class="bg-light">
+    
+
+    <main class="py-4 mb-5">
+        <form class="">
+            <h3 class="my-3">Add Program</h3>
+            <input type="text" class="form-control" required placeholder="Title" id="title">
+            <input type="text" class="form-control" required placeholder="Sub-Title" id="subtitle">
+            <input type="date" class="form-control" required placeholder="Deadline" id="deadline">
+            <div id="editor" class="h-25 mb-3">
+            </div>
+            <input type="text" class="d-none" id="message">
+            <button class="btn" type="submit">Submit</button>
+            <a class="btn btn-primary" href="/organisation/">Cancel</a>
+        </form>
+    </main>
+
+
+</body>
+
+<script src="/assets/js/main.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="/assets/vendor/quill/quill.min.js"></script>
+    <script src="/assets/js/db.js"></script>
+
+    <script>
+        let quill = new Quill('#editor', {
+            modules: {
+               toolbar: [
+               [{
+                header: [1, 2, 3, 4, false]
+                }],
+               ['bold', 'italic', 'underline'],[{
+                  'color': []
+               }, {
+                  'background': []
+               }],
+               [{list : "ordered"}, {list : "bullet"}],
+               [{align : []}],
+               ['image', 'code-block', 'link', 'video']
+            ]
+            },
+            theme: 'snow',
+            placeholder : 'About...'
+         });
+         addProgram();
+
+    </script>
+
+</html>

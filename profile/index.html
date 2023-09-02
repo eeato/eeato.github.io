@@ -17,25 +17,23 @@
     <main>
         <p class="datetime bg-primary text-white px-3 py-1 rounded-pill"><i class="bi bi-clock text-white"></i> Wed 23 June | 12:30 am</p>
         <p class="datetime bg-primary text-white px-3 py-1 rounded-pill my-1 cursor-pointer" onclick="window.location.href = 'edit/'"><i class="bi bi-pencil text-white"></i> Edit Profile</p>
-        <h1 class="mb-2">Hie there, I'm <span class="text-muted user_displayname">Johnny</span> </h1>
+        <h1 class="mb-2">Hie there, I'm <span class="text-muted user_displayapplicant">...</span> </h1>
         <div class="links d-flex flex-row">
-            <button class="btn btn-white bg-white">Civil Engi.</button>
-            <button class="btn btn-white bg-white">Software Engi.</button>
+            
         </div>
-        <p class="body p-2 mt-3 px-2 mb-4 text-muted text-justify">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit minima fugiat similique voluptas at maxime ex, dignissimos illo laborum corrupti sint. Laudantium obcaecati quibusdam et rerum nobis sapiente voluptatum? Repudiandae? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis quae omnis adipisci suscipit quaerat, ipsum excepturi quam reprehenderit nam unde velit quasi deleniti maiores sint quidem possimus obcaecati assumenda quas.
-        </p>
-        <p class="text-center px-2">
-            <hr class="mx-5 text-center">
-        </p>
+        <p class="body p-2 mt-3 px-2 mb-4 text-muted text-justify">...</p>
         <div class="p-2 profile">
-            <span class="h3 my-3">My Profile</span><br>
+            <div class="sect-header">
+                <span class="h3 my-3">Profile</span>
+                <span></span>
+            </div>
+            <br>
             <div class="d-flex flex-row p-3 border-1 border rounded-3">
-                <img src="../assets/img/avatars/avatar3.jpeg" class="rounded-circle w-auto mx-2" alt="">
+                <img src="" class="rounded-circle w-auto mx-2" alt="">
                 <span class="d-flex flex-column">
-                    <span class="h5 m-0">John Doe</span>
+                    <span class="h5 m-0 user_displayapplicant">...</span>
                     <span class="text-muted text-sm">Student</span>
-                    <span class="text-muted text-smr">Hre, Zimbabwe</span>
+                    <span class="text-muted text-smr">...</span>
                 </span>
             </div>
             <div class="p-3 mt-2 border-1 border rounded-3">
@@ -43,19 +41,19 @@
                 <div class="d-flex flex-row flex-wrap p-info">
                     <span>
                         <span class="text-muted">First Name</span><br>
-                        <span>John</span>
+                        <span>...</span>
                     </span>
                     <span>
                         <span class="text-muted">Last Name</span><br>
-                        <span>Doe</span>
+                        <span>...</span>
                     </span>
                     <span>
                         <span class="text-muted">Email Address</span><br>
-                        <span>johndoe@gmail.com</span>
+                        <span class="user_email">...</span>
                     </span>
                     <span>
                         <span class="text-muted">Phone</span><br>
-                        <span>+09 365 346 888</span>
+                        <span class="user_phone">...</span>
                     </span>
                 </div>
             </div>
@@ -65,21 +63,88 @@
                 <div class="d-flex flex-row flex-wrap p-info">
                     <span>
                         <span class="text-muted">Country</span><br>
-                        <span>United Kingdom</span>
+                        <span id="_country">...</span>
                     </span>
                     <span>
                         <span class="text-muted">City/State</span><br>
-                        <span>Leeds, East London</span>
+                        <span class="_city">...</span>
                     </span>
                     <span>
                         <span class="text-muted">House</span><br>
-                        <span>ERT2984 Jabavu Dr</span>
+                        <span id="_address">...</span>
+                    </span>
+                </div>
+            </div>
+
+            
+        </div>
+        
+        <div class="p-2 achievements">
+            <div class="sect-header">
+                <span class="h3 my-3">Education </span>
+                <span></span>
+            </div>
+            <div class="p-3 mt-2 border-1 border rounded-3">
+                <span class="h5">Grade 7</span><br>
+                <div class="d-flex flex-row flex-wrap p-info">
+                    <span>
+                        <span class="text-muted">Exam Board</span><br>
+                        <span>...</span>
+                    </span>
+                    <span>
+                        <span class="text-muted">School</span><br>
+                        <span>...</span>
+                    </span>
+                    <span>
+                        <span class="text-muted">Year</span><br>
+                        <span>...</span>
+                    </span>
+                    <span>
+                        <span class="text-muted">Results</span><br>
+                        <span>...</span>
+                    </span>
+                    <span>
+                        <span class="text-muted">Subjects</span><br>
+                        <span>...</span>
+                    </span>
+                </div>
+            </div>
+            <div class="p-3 mt-2 border-1 border rounded-3">
+                <span class="h5">O level</span><br>
+                <div class="d-flex flex-row flex-wrap p-info">
+                    <span>
+                        <span class="text-muted">Exam Board</span><br>
+                        <span>...</span>
+                    </span>
+                    <span>
+                        <span class="text-muted">School</span><br>
+                        <span>...</span>
+                    </span>
+                    <span>
+                        <span class="text-muted">Year</span><br>
+                        <span>...</span>
+                    </span>
+                </div>
+            </div>
+            <div class="p-3 mt-2 border-1 border rounded-3">
+                <span class="h5">A level</span><br>
+                <div class="d-flex flex-row flex-wrap p-info">
+                    <span>
+                        <span class="text-muted">Exam Board</span><br>
+                        <span>...</span>
+                    </span>
+                    <span>
+                        <span class="text-muted">School</span><br>
+                        <span>...</span>
+                    </span>
+                    <span>
+                        <span class="text-muted">Year</span><br>
+                        <span>...</span>
                     </span>
                 </div>
             </div>
         </div>
-        
-        
+        <div class="m-3 p-3"></div>
     </main>
 </body>
 <script src="/assets/js/main.js"></script>
@@ -90,6 +155,73 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
 <script src="/assets/js/db.js"></script>
 <script>
+
+    function setText(val, el){
+        document.querySelectorAll(el).forEach(v => {v.innerText = val});
+    }
+    function setHTML(val, el){
+        document.querySelectorAll(el).forEach(v => {v.innerHTML = val});
+    }
+
+    function getid(){
+        if(window.location.hash !== null){
+            return window.location.hash.slice(1);
+        }else{
+            return user.uid;
+        }
+    }
+
+    applicants.child(getid()).get().then((snapshot) => {
+        if (snapshot.exists()) {
+          let ppa = snapshot.val();
+          setText(ppa.fullName, '.user_displayapplicant');
+          setHTML(ppa.intro, 'main p .body');
+          setText(ppa.fullname.split(' ')[0], 'body > main > div.p-2.profile > div:nth-child(4) > div > span:nth-child(1) > span:nth-child(3)');
+          setText(ppa.fullname.split(' ')[1], 'body > main > div.p-2.profile > div:nth-child(4) > div > span:nth-child(2) > span:nth-child(3)');
+          setText(ppa.country, '#_country');
+          setText(ppa.city, 'body > main > div.p-2.profile span._city');
+          setText(ppa.address, '#_address');
+          setText(ppa.grade7.examboard, 'body > main > div.p-2.achievements > div.p-3.mt-2.border-1.border.rounded-3 > div > span:nth-child(1) > span:nth-child(3)');
+          setText(ppa.grade7.school, 'body > main > div.p-2.achievements > div.p-3.mt-2.border-1.border.rounded-3 > div > span:nth-child(2) > span:nth-child(3)');
+          setText(ppa.grade7.year, 'body > main > div.p-2.achievements > div.p-3.mt-2.border-1.border.rounded-3 > div > span:nth-child(3) > span:nth-child(3)');
+          setText(ppa.grade7.results, 'body > main > div.p-2.achievements > div.p-3.mt-2.border-1.border.rounded-3 > div > span:nth-child(4) > span:nth-child(3)');
+          setText(ppa.grade7.subjects, 'body > main > div.p-2.achievements > div.p-3.mt-2.border-1.border.rounded-3 > div > span:nth-child(5) > span:nth-child(3)');
+
+          setText(ppa.oLevel.examboard, 'body > main > div.p-2.achievements > div:nth-child(3) > div > span:nth-child(1) > span:nth-child(3)');
+          setText(ppa.oLevel.school, 'body > main > div.p-2.achievements > div:nth-child(3) > div > span:nth-child(2) > span:nth-child(3)');
+          setText(ppa.oLevel.year, 'body > main > div.p-2.achievements > div:nth-child(3) > div > span:nth-child(3) > span:nth-child(3)');
+
+          ppa.oLevel.results.split(',').forEach((v) => {
+            let vvv = v.split(':');
+            let elll = `<span>
+                <span class="text-muted">${vvv[0]}</span><br>
+                <span>${vvv[1]}</span>
+            </span>`;
+            document.querySelector("body > main > div.p-2.achievements > div:nth-child(3) > div").innerHTML = document.querySelector("body > main > div.p-2.achievements > div:nth-child(3) > div").innerHTML + elll;
+          })
+
+          setText(ppa.aLevel.examboard, 'body > main > div.p-2.achievements > div:nth-child(4) > div > span:nth-child(1) > span:nth-child(3)');
+          setText(ppa.aLevel.school, 'body > main > div.p-2.achievements > div:nth-child(4) > div > span:nth-child(2) > span:nth-child(3)');
+          setText(ppa.aLevel.year, 'body > main > div.p-2.achievements > div:nth-child(4) > div > span:nth-child(3) > span:nth-child(3)');
+
+          ppa.aLevel.results.split(',').forEach((v) => {
+            let vvv = v.split(':');
+            let elll = `<span>
+                <span class="text-muted">${vvv[0]}</span><br>
+                <span>${vvv[1]}</span>
+            </span>`;
+            document.querySelector("body > main > div.p-2.achievements > div:nth-child(4) > div").innerHTML = document.querySelector("body > main > div.p-2.achievements > div:nth-child(3) > div").innerHTML + elll;
+          })
+
+          ppa.skills.split(',').forEach((v) => {
+            let elll = `<button class="btn btn-white bg-white">${v}</button>`;
+            document.querySelector("body > main > div.links.d-flex.flex-row").innerHTML = document.querySelector("body > main > div.links.d-flex.flex-row").innerHTML + elll;
+          })
+
+        } else{
+            document.body.style.filter = "blur(10px);";
+        }
+    });
 
 </script>
 </html>
