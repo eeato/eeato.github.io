@@ -170,7 +170,7 @@
             return user.uid;
         //}
     }
-    consol.log(user.uid + ' this is the id');
+    console.log(user.uid + ' this is the id');
     applicants.child(user.uid).get().then((snapshot) => {
         if (snapshot.exists()) {
           let ppa = snapshot.val();
