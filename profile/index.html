@@ -154,7 +154,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
 <script src="/assets/js/db.js"></script>
-<script>
+<script async>
 
     function setText(val, el){
         document.querySelectorAll(el).forEach(v => {v.innerText = val});
@@ -163,7 +163,7 @@
         document.querySelectorAll(el).forEach(v => {v.innerHTML = val});
     }
 
-    user = firebase.auth().currentUser;
+    user = await firebase.auth().currentUser;
 
     
     function getid(){
@@ -173,7 +173,7 @@
             return user.uid;
         //}
     }
-    console.log(user.uid + ' this is the id');
+    await console.log(user.uid + ' this is the id');
     applicants.child(user.uid).get().then((snapshot) => {
         if (snapshot.exists()) {
           let ppa = snapshot.val();
