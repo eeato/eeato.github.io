@@ -163,13 +163,7 @@
         document.querySelectorAll(el).forEach(v => {v.innerHTML = val});
     }
 
-    firebase.auth().onAuthStateChanged((userr) => {
-    if (userr) {
-    user = userr;
-    //var uid = userr.uid;
-    // ...
-    }
-});
+    user = firebase.auth().currentUser;
 
     
     function getid(){
