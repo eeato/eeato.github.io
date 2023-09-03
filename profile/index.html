@@ -163,6 +163,15 @@
         document.querySelectorAll(el).forEach(v => {v.innerHTML = val});
     }
 
+    firebase.auth().onAuthStateChanged((userr) => {
+    if (userr) {
+    user = userr;
+    //var uid = userr.uid;
+    // ...
+    }
+});
+
+    
     function getid(){
         //if(window.location.hash !== "" || window.location.hash !== undefined || window.location.hash !== null){
             //return window.location.hash.slice(1);
