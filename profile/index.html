@@ -155,7 +155,11 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
 <script src="/assets/js/db.js"></script>
 <script async>
-    (async() => {
+
+    firebase.auth().onAuthStateChanged((userr) => {
+    if (userr) {
+        user = userr;
+        (async() => {
         function setText(val, el){
         document.querySelectorAll(el).forEach(v => {v.innerText = val});
     }
@@ -226,6 +230,10 @@
         }
     });
     })()
+      }
+    });
+    
+    
     
 
 </script>
