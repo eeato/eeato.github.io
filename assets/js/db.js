@@ -244,7 +244,7 @@ function addApplicant(frm = document.body.querySelector('form')) {
         website : elval('#website'), 
         intro : elval('#intro'),
         cv : elval('#cv'),
-        languages : elval('languages'),
+        languages : elval('#languages'),
         skills : elval('#skills'),
         hobbies : elval('#hobbies'),
         messages : "",
