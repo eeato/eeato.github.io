@@ -177,10 +177,11 @@
             applicants.child(user.uid).get().then((snapshot) => {
                 if (snapshot.exists()) {
                 let ppa = snapshot.val();
+                    console.log(ppa);
                 setText(ppa.fullName, '.user_displayapplicant');
                 setHTML(ppa.intro, 'main p .body');
-                setText(ppa.fullname.split(' ')[0], 'body > main > div.p-2.profile > div:nth-child(4) > div > span:nth-child(1) > span:nth-child(3)');
-                setText(ppa.fullname.split(' ')[1], 'body > main > div.p-2.profile > div:nth-child(4) > div > span:nth-child(2) > span:nth-child(3)');
+                setText(ppa.fullname, 'body > main > div.p-2.profile > div:nth-child(4) > div > span:nth-child(1) > span:nth-child(3)');
+                setText(ppa.fullname, 'body > main > div.p-2.profile > div:nth-child(4) > div > span:nth-child(2) > span:nth-child(3)');
                 setText(ppa.country, '#_country');
                 setText(ppa.city, 'body > main > div.p-2.profile span._city');
                 setText(ppa.address, '#_address');
