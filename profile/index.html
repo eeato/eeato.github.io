@@ -167,7 +167,7 @@
             }
 
             function getid(){
-                if(window.location.hash !== null){
+                if(window.location.hash !== null || window.location.hash !== "" || window.location.hash !== undefined){
                     return window.location.hash.slice(1);
                 }else{
                     return user.uid;
