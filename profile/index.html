@@ -174,7 +174,7 @@
                 }
             }
 
-            applicants.child(getid()).get().then((snapshot) => {
+            applicants.child(user.uid).get().then((snapshot) => {
                 if (snapshot.exists()) {
                 let ppa = snapshot.val();
                 setText(ppa.fullName, '.user_displayapplicant');
