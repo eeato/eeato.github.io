@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/css/main.css">
     <link rel="stylesheet" href="style.css">
-    <title>Home</title>
+    <title>Edit Organisation</title>
 </head>
-<body class="bg-light">
+<body class="bg-light blur-body">
     
 
     <main class="py-4 mb-5">
@@ -64,7 +64,18 @@
             theme: 'snow',
             placeholder : 'About...'
          });
-         addOrganisation();
+         
+
+
+         firebase.auth().onAuthStateChanged((userr) => {
+            if (userr) {
+                user = userr;
+                addOrganisation();
+                document.body.classList.remove('blur-body');
+            }else{
+                window.location.href = '/';
+            }
+          });
 
     </script>
 

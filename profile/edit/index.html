@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <title>Edit Profile</title>
 </head>
-<body class="bg-light">
+<body class="bg-light blur-body">
     <nav class="profile-nav shadow-sm">
         <a href="/profile/"><i class="bi bi-person"></i></a>
         <a href="/program/search/"><i class="bi bi-search"></i></a>
@@ -94,6 +94,15 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
     <script src="/assets/js/db.js"></script>
     <script>
+        firebase.auth().onAuthStateChanged((userr) => {
+            if (userr) {
+                user = userr;
+                addApplicant();
+                document.body.classList.remove('blur-body');
+            }else{
+                window.location.href = '/';
+            }
+          });
         
     </script>
 </html>

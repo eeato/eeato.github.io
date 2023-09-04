@@ -219,3 +219,6 @@ nav.profile-nav > a:hover{
         font-size: larger;
     }
 }
+.blur-body{
+    filter: blur(10px);
+}

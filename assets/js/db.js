@@ -35,36 +35,39 @@ var provider = new firebase.auth.GoogleAuthProvider();
 firebase.auth().onAuthStateChanged((userr) => {
   if (userr) {
     user = userr;
-    //var uid = userr.uid;
-    // ...
+    try {
+      if (window.location.href.includes('/profile/') && !window.location.href.includes('/edit/')) {
+        applicants.child(user.uid).get().then((snapshot) => {
+          if (snapshot.exists()) {
+            
+          } else{
+            window.location.href = "/profile/edit/";
+          }
+        });
+      }
+      if (window.location.href.includes('/organisation/') && !window.location.href.includes('/edit/')) {
+        organisations.child(user.uid).get().then((snapshot) => {
+          if (snapshot.exists()) {
+            
+          } else{
+            window.location.href = "/organisation/edit/";
+          }
+        });
+      }
+      document.querySelector(".user_displayname").innerText = user.displayName;
+      document.querySelector(".user_email").innerText = user.email;
+      document.querySelector(".user_photo").src = user.photoURL;
+    } catch (e) {console.error(e)}
+
+  }else{
+    window.location.href = '/';
   }
 });
 
 
-try {
-    
-  if (window.location.href.includes('/profile/edit/')) {
-    addApplicant();
-  }
-
-  if (window.location.href.includes('/profile/') && !window.location.href.includes('/edit/')) {
-    applicants.child(user.uid).get().then((snapshot) => {
-      if (snapshot.exists()) {
-        
-      } else{
-        window.location.href = "/profile/edit/";
-      }
-    });
-  }
-
-  document.querySelector(".user_displayname").innerText = user.displayName;
-  document.querySelector(".user_email").innerText = user.email;
-  document.querySelector(".user_photo").innerText = user.photoURL;
-} catch (e) {}
 
 
 
-try {
 document.querySelector('body > header > div > div.left > a').addEventListener('click', event => {
     firebase.auth().onAuthStateChanged((userr) => {
     if (userr) {
@@ -99,7 +102,7 @@ document.querySelector('body > header > div > div.left > a').addEventListener('c
     
   });
 });
-} catch(e) {};
+
 
 function SignUp(email, password, username) {
   firebase
@@ -300,7 +303,6 @@ function addApplicant(frm = document.body.querySelector('form')) {
   }
 }
 
-
 function addOrganisation(frm = document.body.querySelector('form')) {
   let exi;
 
@@ -438,7 +440,6 @@ async function addProgram(frm = document.querySelector('form')){
 
   
 }
-
 
 
 function deleteprogram(event) {

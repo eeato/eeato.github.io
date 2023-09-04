@@ -56,7 +56,16 @@
             theme: 'snow',
             placeholder : 'About...'
          });
-         addProgram();
+
+         firebase.auth().onAuthStateChanged((userr) => {
+            if (userr) {
+                user = userr;
+                addProgram();
+            }else{
+                window.location.href = '/';
+            }
+          });
+         
 
     </script>
 

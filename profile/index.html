@@ -15,7 +15,7 @@
         <a href="/settings/"><i class="bi bi-gear"></i></a>
     </nav>
     <main>
-        <p class="datetime bg-primary text-white px-3 py-1 rounded-pill"><i class="bi bi-clock text-white"></i> Wed 23 June | 12:30 am</p>
+        <p class="datetime bg-primary text-white px-3 py-1 rounded-pill"><i class="bi bi-clock text-white"></i> No notifications</p>
         <p class="datetime bg-primary text-white px-3 py-1 rounded-pill my-1 cursor-pointer" onclick="window.location.href = 'edit/'"><i class="bi bi-pencil text-white"></i> Edit Profile</p>
         <h1 class="mb-2">Hie there, I'm <span class="text-muted user_displayapplicant">...</span> </h1>
         <div class="links d-flex flex-row">
@@ -29,7 +29,7 @@
             </div>
             <br>
             <div class="d-flex flex-row p-3 border-1 border rounded-3">
-                <img src="" class="rounded-circle w-auto mx-2" alt="">
+                <img src="" class="rounded-circle w-auto mx-2 user_photo" alt="">
                 <span class="d-flex flex-column">
                     <span class="h5 m-0 user_displayapplicant">...</span>
                     <span class="text-muted text-sm">Student</span>
@@ -154,87 +154,83 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
 <script src="/assets/js/db.js"></script>
-<script async>
+<script>
 
     firebase.auth().onAuthStateChanged((userr) => {
-    if (userr) {
-        user = userr;
-        (async() => {
-        function setText(val, el){
-        document.querySelectorAll(el).forEach(v => {v.innerText = val});
-    }
-    function setHTML(val, el){
-        document.querySelectorAll(el).forEach(v => {v.innerHTML = val});
-    }
+        if (userr) {
+          user = userr;
+            function setText(val, el){
+                document.querySelectorAll(el).forEach(v => {v.innerText = val});
+            }
+            function setHTML(val, el){
+                document.querySelectorAll(el).forEach(v => {v.innerHTML = val});
+            }
 
-    user = await firebase.auth().currentUser;
+            function getid(){
+                if(window.location.hash !== null){
+                    return window.location.hash.slice(1);
+                }else{
+                    return user.uid;
+                }
+            }
 
-    
-    function getid(){
-        //if(window.location.hash !== "" || window.location.hash !== undefined || window.location.hash !== null){
-            //return window.location.hash.slice(1);
-        //}else{
-            return user.uid;
-        //}
-    }
-    await console.log(user.uid + ' this is the id');
-    applicants.child(user.uid).get().then((snapshot) => {
-        if (snapshot.exists()) {
-          let ppa = snapshot.val();
-          setText(ppa.fullName, '.user_displayapplicant');
-          setHTML(ppa.intro, 'main p .body');
-          setText(ppa.fullname.split(' ')[0], 'body > main > div.p-2.profile > div:nth-child(4) > div > span:nth-child(1) > span:nth-child(3)');
-          setText(ppa.fullname.split(' ')[1], 'body > main > div.p-2.profile > div:nth-child(4) > div > span:nth-child(2) > span:nth-child(3)');
-          setText(ppa.country, '#_country');
-          setText(ppa.city, 'body > main > div.p-2.profile span._city');
-          setText(ppa.address, '#_address');
-          setText(ppa.grade7.examboard, 'body > main > div.p-2.achievements > div.p-3.mt-2.border-1.border.rounded-3 > div > span:nth-child(1) > span:nth-child(3)');
-          setText(ppa.grade7.school, 'body > main > div.p-2.achievements > div.p-3.mt-2.border-1.border.rounded-3 > div > span:nth-child(2) > span:nth-child(3)');
-          setText(ppa.grade7.year, 'body > main > div.p-2.achievements > div.p-3.mt-2.border-1.border.rounded-3 > div > span:nth-child(3) > span:nth-child(3)');
-          setText(ppa.grade7.results, 'body > main > div.p-2.achievements > div.p-3.mt-2.border-1.border.rounded-3 > div > span:nth-child(4) > span:nth-child(3)');
-          setText(ppa.grade7.subjects, 'body > main > div.p-2.achievements > div.p-3.mt-2.border-1.border.rounded-3 > div > span:nth-child(5) > span:nth-child(3)');
+            applicants.child(getid()).get().then((snapshot) => {
+                if (snapshot.exists()) {
+                let ppa = snapshot.val();
+                setText(ppa.fullName, '.user_displayapplicant');
+                setHTML(ppa.intro, 'main p .body');
+                setText(ppa.fullname.split(' ')[0], 'body > main > div.p-2.profile > div:nth-child(4) > div > span:nth-child(1) > span:nth-child(3)');
+                setText(ppa.fullname.split(' ')[1], 'body > main > div.p-2.profile > div:nth-child(4) > div > span:nth-child(2) > span:nth-child(3)');
+                setText(ppa.country, '#_country');
+                setText(ppa.city, 'body > main > div.p-2.profile span._city');
+                setText(ppa.address, '#_address');
+                setText(ppa.grade7.examboard, 'body > main > div.p-2.achievements > div.p-3.mt-2.border-1.border.rounded-3 > div > span:nth-child(1) > span:nth-child(3)');
+                setText(ppa.grade7.school, 'body > main > div.p-2.achievements > div.p-3.mt-2.border-1.border.rounded-3 > div > span:nth-child(2) > span:nth-child(3)');
+                setText(ppa.grade7.year, 'body > main > div.p-2.achievements > div.p-3.mt-2.border-1.border.rounded-3 > div > span:nth-child(3) > span:nth-child(3)');
+                setText(ppa.grade7.results, 'body > main > div.p-2.achievements > div.p-3.mt-2.border-1.border.rounded-3 > div > span:nth-child(4) > span:nth-child(3)');
+                setText(ppa.grade7.subjects, 'body > main > div.p-2.achievements > div.p-3.mt-2.border-1.border.rounded-3 > div > span:nth-child(5) > span:nth-child(3)');
 
-          setText(ppa.oLevel.examboard, 'body > main > div.p-2.achievements > div:nth-child(3) > div > span:nth-child(1) > span:nth-child(3)');
-          setText(ppa.oLevel.school, 'body > main > div.p-2.achievements > div:nth-child(3) > div > span:nth-child(2) > span:nth-child(3)');
-          setText(ppa.oLevel.year, 'body > main > div.p-2.achievements > div:nth-child(3) > div > span:nth-child(3) > span:nth-child(3)');
+                setText(ppa.oLevel.examboard, 'body > main > div.p-2.achievements > div:nth-child(3) > div > span:nth-child(1) > span:nth-child(3)');
+                setText(ppa.oLevel.school, 'body > main > div.p-2.achievements > div:nth-child(3) > div > span:nth-child(2) > span:nth-child(3)');
+                setText(ppa.oLevel.year, 'body > main > div.p-2.achievements > div:nth-child(3) > div > span:nth-child(3) > span:nth-child(3)');
 
-          ppa.oLevel.results.split(',').forEach((v) => {
-            let vvv = v.split(':');
-            let elll = `<span>
-                <span class="text-muted">${vvv[0]}</span><br>
-                <span>${vvv[1]}</span>
-            </span>`;
-            document.querySelector("body > main > div.p-2.achievements > div:nth-child(3) > div").innerHTML = document.querySelector("body > main > div.p-2.achievements > div:nth-child(3) > div").innerHTML + elll;
-          })
+                ppa.oLevel.results.split(',').forEach((v) => {
+                    let vvv = v.split(':');
+                    let elll = `<span>
+                        <span class="text-muted">${vvv[0]}</span><br>
+                        <span>${vvv[1]}</span>
+                    </span>`;
+                    document.querySelector("body > main > div.p-2.achievements > div:nth-child(3) > div").innerHTML = document.querySelector("body > main > div.p-2.achievements > div:nth-child(3) > div").innerHTML + elll;
+                })
 
-          setText(ppa.aLevel.examboard, 'body > main > div.p-2.achievements > div:nth-child(4) > div > span:nth-child(1) > span:nth-child(3)');
-          setText(ppa.aLevel.school, 'body > main > div.p-2.achievements > div:nth-child(4) > div > span:nth-child(2) > span:nth-child(3)');
-          setText(ppa.aLevel.year, 'body > main > div.p-2.achievements > div:nth-child(4) > div > span:nth-child(3) > span:nth-child(3)');
+                setText(ppa.aLevel.examboard, 'body > main > div.p-2.achievements > div:nth-child(4) > div > span:nth-child(1) > span:nth-child(3)');
+                setText(ppa.aLevel.school, 'body > main > div.p-2.achievements > div:nth-child(4) > div > span:nth-child(2) > span:nth-child(3)');
+                setText(ppa.aLevel.year, 'body > main > div.p-2.achievements > div:nth-child(4) > div > span:nth-child(3) > span:nth-child(3)');
 
-          ppa.aLevel.results.split(',').forEach((v) => {
-            let vvv = v.split(':');
-            let elll = `<span>
-                <span class="text-muted">${vvv[0]}</span><br>
-                <span>${vvv[1]}</span>
-            </span>`;
-            document.querySelector("body > main > div.p-2.achievements > div:nth-child(4) > div").innerHTML = document.querySelector("body > main > div.p-2.achievements > div:nth-child(3) > div").innerHTML + elll;
-          })
+                ppa.aLevel.results.split(',').forEach((v) => {
+                    let vvv = v.split(':');
+                    let elll = `<span>
+                        <span class="text-muted">${vvv[0]}</span><br>
+                        <span>${vvv[1]}</span>
+                    </span>`;
+                    document.querySelector("body > main > div.p-2.achievements > div:nth-child(4) > div").innerHTML = document.querySelector("body > main > div.p-2.achievements > div:nth-child(3) > div").innerHTML + elll;
+                })
 
-          ppa.skills.split(',').forEach((v) => {
-            let elll = `<button class="btn btn-white bg-white">${v}</button>`;
-            document.querySelector("body > main > div.links.d-flex.flex-row").innerHTML = document.querySelector("body > main > div.links.d-flex.flex-row").innerHTML + elll;
-          })
+                ppa.skills.split(',').forEach((v) => {
+                    let elll = `<button class="btn btn-white bg-white">${v}</button>`;
+                    document.querySelector("body > main > div.links.d-flex.flex-row").innerHTML = document.querySelector("body > main > div.links.d-flex.flex-row").innerHTML + elll;
+                })
 
-        } else{
-            document.body.style.filter = "blur(10px);";
+                } else{
+                    document.body.style.filter = "blur(10px);";
+                }
+            });
+
+        }else{
+            window.location.href='/';
         }
-    });
-    })()
-      }
-    });
-    
-    
-    
+      });
 
+    
 </script>
 </html>
