@@ -67,7 +67,7 @@ firebase.auth().onAuthStateChanged((userr) => {
 
 
 
-
+try{
 document.querySelector('body > header > div > div.left > a').addEventListener('click', event => {
     firebase.auth().onAuthStateChanged((userr) => {
     if (userr) {
@@ -102,7 +102,7 @@ document.querySelector('body > header > div > div.left > a').addEventListener('c
     
   });
 });
-
+}catch(e){}
 
 function SignUp(email, password, username) {
   firebase
