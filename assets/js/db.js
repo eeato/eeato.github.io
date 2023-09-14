@@ -165,7 +165,7 @@ function signout() {
 }
 
 
-document.querySelectorAll("a[type='logout']").forEach(el => el.addEventListener('click', ev=> {ev.preventDefault();signout();}));
+//document.querySelectorAll("a[type='logout']").forEach(el => el.addEventListener('click', ev=> {ev.preventDefault();signout();}));
 
 function elval(q) {
   let val = document.querySelector(q).value;
