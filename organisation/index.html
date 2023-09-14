@@ -46,7 +46,15 @@
     <script src="/assets/js/db.js"></script>
 
     <script>
-        currentOrganisation();
+        firebase.auth().onAuthStateChanged((userr) => {
+        if (userr) {
+            user = userr;currentOrganisation();
+        }else{
+            window.location.href= '/';
+        }
+            
+        })
+        
     </script>
 
 
