@@ -207,7 +207,7 @@ function addApplicant(frm = document.body.querySelector('form')) {
       setval(ppa.grade7.year, "#g7_year");
       setval(ppa.grade7.results, "#g7_results");
       setval(ppa.grade7.subjects, "#g7_subjects");
-      setval(ppa.oLevel.examboard, "#ol_examboard");
+      setval(ppa.oLevel.examboard, "#ol_exam_board");
       setval(ppa.oLevel.school, "#ol_school");
       setval(ppa.oLevel.results, "#ol_results");
       setval(ppa.oLevel.year, "#ol_year");
