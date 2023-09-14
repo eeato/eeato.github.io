@@ -60,7 +60,8 @@ firebase.auth().onAuthStateChanged((userr) => {
     } catch (e) {console.error(e)}
 
   }else{
-    window.location.href = '/';
+    
+    //window.location.href = '/';
   }
 });
 
